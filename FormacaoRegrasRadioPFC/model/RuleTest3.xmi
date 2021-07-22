@@ -17,8 +17,7 @@
           Operation="greater_equal"/>
       <operand
           xsi:type="action:Attributes"
-          name="CarrierFreq"
-          type="CarrierFreq"/>
+          name="CarrierFreq"/>
       <operand
           xsi:type="action:Num"
           value="100.0"/>
@@ -29,8 +28,7 @@
           xsi:type="action:Comparator"
           Operation="less_equal"/>
       <operand
-          xsi:type="action:Attributes"
-          name="SecLevel"/>
+          xsi:type="action:Attributes"/>
       <operand
           xsi:type="action:Num"
           value="0.5"/>
@@ -46,8 +44,7 @@
             Operation="equal"/>
         <operand
             xsi:type="action:Attributes"
-            name="OpRole"
-            type="OpRole"/>
+            name="OpRole"/>
         <operand
             xsi:type="action:Strings"
             value="soldier"/>
@@ -62,8 +59,7 @@
               Operation="equal"/>
           <operand
               xsi:type="action:Attributes"
-              name="SampleValues_ASC"
-              type="SampleValues_ASC"/>
+              name="SampleValues_ASC"/>
           <operand
               xsi:type="action:Strings"
               value="true"/>
@@ -75,8 +71,7 @@
               Operation="equal"/>
           <operand
               xsi:type="action:Attributes"
-              name="SampleValues_DESC"
-              type="SampleValues_DESC"/>
+              name="SampleValues_DESC"/>
           <operand
               xsi:type="action:Strings"
               value="false"/>
@@ -86,5 +81,5 @@
   </leftside>
   <rightside
       xsi:type="action:ActionRadio"
-      newState="Mode_4"/>
+      newState="ALERT_MODE"/>
 </action:Rule>

@@ -9,7 +9,9 @@
         eType="#//LeftSide" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightside" lowerBound="1"
         eType="#//RightSide" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RightSide"/>
   <eClassifiers xsi:type="ecore:EClass" name="LeftSide"/>
@@ -46,8 +48,8 @@
         eType="#//MathOp" defaultValueLiteral="plus"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attributes" eSuperTypes="#//Operand">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AttrTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//AttrTypes"
+        defaultValueLiteral="SecLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operand"/>
   <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="#//Operand"/>
@@ -62,8 +64,6 @@
     <eLiterals name="or" value="1"/>
     <eLiterals name="not" value="2"/>
     <eLiterals name="None" value="3"/>
-    <eLiterals name="nand" value="4"/>
-    <eLiterals name="nor" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CompOp">
     <eLiterals name="greater"/>
@@ -71,6 +71,7 @@
     <eLiterals name="less" value="2"/>
     <eLiterals name="less_equal" value="3"/>
     <eLiterals name="equal" value="4"/>
+    <eLiterals name="not_equal" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MathOp">
     <eLiterals name="plus"/>
@@ -86,9 +87,13 @@
     <eLiterals name="SampleValues_DESC" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RadioModes">
-    <eLiterals name="Mode_1"/>
-    <eLiterals name="Mode_2" value="1"/>
-    <eLiterals name="Mode_3" value="2"/>
-    <eLiterals name="Mode_4" value="3"/>
+    <eLiterals name="SILENT_MODE"/>
+    <eLiterals name="ALERT_MODE" value="1"/>
+    <eLiterals name="FULLDUPLEX_MODE" value="2"/>
+    <eLiterals name="NORMAL_MODE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//Rule"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

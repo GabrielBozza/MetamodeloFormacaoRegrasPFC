@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action:RuleSet
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:action="http://action/1.0"
+    xsi:schemaLocation="http://action/1.0 formacaoRegrasRadioPFC.ecore">
+  <rule name="Rule1"
+      priority="1">
+    <leftside
+        xsi:type="action:SimpleExp"
+        PrecedingLogicOp="None">
+      <operator
+          xsi:type="action:Comparator"/>
+      <operand
+          xsi:type="action:Attributes"/>
+      <operand
+          xsi:type="action:Num"
+          value="5.0"/>
+    </leftside>
+    <rightside
+        xsi:type="action:ActionRadio"/>
+  </rule>
+  <rule name="Rule2"
+      priority="2">
+    <leftside
+        xsi:type="action:SimpleExp"
+        PrecedingLogicOp="None">
+      <operator
+          xsi:type="action:Comparator"
+          Operation="less_equal"/>
+      <operand
+          xsi:type="action:Attributes"
+          name="OpRole"/>
+      <operand
+          xsi:type="action:Strings"
+          value="cmt"/>
+    </leftside>
+    <rightside
+        xsi:type="action:ActionRadio"
+        newState="FULLDUPLEX_MODE"/>
+  </rule>
+</action:RuleSet>
