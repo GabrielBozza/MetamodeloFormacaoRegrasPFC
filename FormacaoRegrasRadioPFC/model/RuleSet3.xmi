@@ -5,8 +5,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:action="http://action/1.0"
     xsi:schemaLocation="http://action/1.0 formacaoRegrasRadioPFC.ecore">
-  <rule name="RuleST2"
-      priority="2">
+  <rule name="RuleST1"
+      priority="1">
     <leftside
         xsi:type="action:CompoundExp"
         PrecedingLogicOp="None">
@@ -18,7 +18,7 @@
             Operation="equal"/>
         <operand
             xsi:type="action:Attributes"
-            name="SNRValues_DESC"/>
+            name="SampleValues_ASC"/>
         <operand
             xsi:type="action:Strings"
             value="true"/>
@@ -30,7 +30,7 @@
             PrecedingLogicOp="None">
           <operator
               xsi:type="action:Comparator"
-              Operation="less"/>
+              Operation="greater_equal"/>
           <operand
               xsi:type="action:Attributes"/>
           <operand
@@ -47,7 +47,7 @@
               name="CarrierFreq"/>
           <operand
               xsi:type="action:Num"
-              value="100.0"/>
+              value="50.0"/>
         </expression>
         <expression
             xsi:type="action:SimpleExp">
@@ -59,12 +59,12 @@
               name="OpRole"/>
           <operand
               xsi:type="action:Strings"
-              value="soldier"/>
+              value="cmt"/>
         </expression>
       </expression>
     </leftside>
     <rightside
         xsi:type="action:ActionRadio"
-        newState="NORMAL_MODE"/>
+        newState="ALERT_MODE"/>
   </rule>
 </action:RuleSet>
