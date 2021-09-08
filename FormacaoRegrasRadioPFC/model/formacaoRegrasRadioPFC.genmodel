@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FormacaoRegrasRadioPFC/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/FormacaoRegrasRadioPFC/src-gen" creationIcons="false"
     editDirectory="/FormacaoRegrasRadioPFC.edit/src-gen" editorDirectory="/FormacaoRegrasRadioPFC.editor/src-gen"
     modelPluginID="FormacaoRegrasRadioPFC" modelName="FormacaoRegrasRadioPFC" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>formacaoRegrasRadioPFC.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Action" disposableProviderFactory="true" ecorePackage="formacaoRegrasRadioPFC.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//LogicOp">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//LogicOp/None"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//LogicOp/and"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//LogicOp/or"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//LogicOp/not"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//CompOp">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//CompOp/greater"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//CompOp/greater_equal"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//CompOp/less"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//CompOp/less_equal"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//CompOp/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//CompOp/not_equal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//MathOp">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//MathOp/plus"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//MathOp/minus"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//MathOp/divided"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//MathOp/multiplication"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//RadioModes">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//RadioModes/SILENT_MODE"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//RadioModes/ALERT_MODE"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//RadioModes/FULLDUPLEX_MODE"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//RadioModes/NORMAL_MODE"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//RadioModes/MAINTAIN_CURRENT_MODE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//BoolAttr">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//BoolAttr/SNRValues_ASC"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//BoolAttr/SNRValues_DESC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//StringAttr">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//StringAttr/OpRole"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="formacaoRegrasRadioPFC.ecore#//NumAttr">
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//NumAttr/SecLevel"/>
+      <genEnumLiterals ecoreEnumLiteral="formacaoRegrasRadioPFC.ecore#//NumAttr/CarrierFreq"/>
+    </genEnums>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference formacaoRegrasRadioPFC.ecore#//Rule/leftside"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference formacaoRegrasRadioPFC.ecore#//Rule/rightside"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Rule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Rule/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//RightSide"/>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//LeftSide"/>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//ActionRadio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//ActionRadio/newState"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//SimpleExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference formacaoRegrasRadioPFC.ecore#//SimpleExp/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference formacaoRegrasRadioPFC.ecore#//SimpleExp/operand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//SimpleExp/PrecedingLogicOp"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//CompoundExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference formacaoRegrasRadioPFC.ecore#//CompoundExp/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//CompoundExp/PrecedingLogicOp"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Logic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Logic/Operation"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Comparator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Comparator/Operation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="formacaoRegrasRadioPFC.ecore#//Operator"/>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Expression"/>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Math">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Math/Operation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="formacaoRegrasRadioPFC.ecore#//Attributes"/>
+    <genClasses image="false" ecoreClass="formacaoRegrasRadioPFC.ecore#//Operand"/>
+    <genClasses image="false" ecoreClass="formacaoRegrasRadioPFC.ecore#//Value"/>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Num">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Num/value"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Strings">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Strings/value"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//RuleSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference formacaoRegrasRadioPFC.ecore#//RuleSet/rule"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//BoolAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//BoolAttributes/boolAttr"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//StringAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//StringAttributes/stringAttr"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//NumAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//NumAttributes/numAttr"/>
+    </genClasses>
+    <genClasses ecoreClass="formacaoRegrasRadioPFC.ecore#//Bool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute formacaoRegrasRadioPFC.ecore#//Bool/value"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>
